@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/discovery"
+        android:title="@string/discover"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bookmark"
+        android:title="@string/bookmark"
+        android:icon="@drawable/ic_bookmark"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/favorite"
+        android:title="@string/favorite"
+        android:icon="@drawable/ic_star"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/library"
+        android:title="@string/library"
+        android:icon="@drawable/ic_bookshelf"
+        app:showAsAction="ifRoom" />
+
+
+</menu>

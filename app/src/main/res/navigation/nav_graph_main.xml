@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/discovery">
+
+    <fragment
+        android:id="@+id/discovery"
+        android:name="com.kat4x.myebookreader.fragments.discover.DiscoverFragment"
+        android:label="My Library"
+        tools:layout="@layout/fragment_discover">
+        <action
+            android:id="@+id/action_discoverFragment_to_readingFragment"
+            app:destination="@id/readingFragment" />
+        <action
+            android:id="@+id/action_discovery_to_readingSettingsBottomSheet"
+            app:destination="@id/readingSettingsBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/readingFragment"
+        android:name="com.kat4x.myebookreader.fragments.discover.ReadingFragment"
+        android:label="fragment_reading"
+        tools:layout="@layout/fragment_reading" >
+        <argument
+            android:name="book"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_readingFragment_to_readingSettingsBottomSheet"
+            app:destination="@id/readingSettingsBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmark"
+        android:name="com.kat4x.myebookreader.fragments.BookmarksFragment"
+        android:label="Bookmarks"
+        tools:layout="@layout/fragment_bookmarks" />
+    <fragment
+        android:id="@+id/favorite"
+        android:name="com.kat4x.myebookreader.fragments.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <dialog
+        android:id="@+id/readingSettingsBottomSheet"
+        android:name="com.kat4x.myebookreader.fragments.ReadingSettingsBottomSheet"
+        android:label="dialog_bottom_reading_settings"
+        tools:layout="@layout/dialog_bottom_reading_settings" />
+</navigation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="discover">Discover</string>
+    <string name="favorite">Favorite</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="library">Library</string>
+</resources>

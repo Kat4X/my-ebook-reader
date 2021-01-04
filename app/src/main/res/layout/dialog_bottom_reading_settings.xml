@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="24dp"
+    android:background="@color/transparent"
+    tools:context=".fragments.ReadingSettingsBottomSheet">
+
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shapeAppearanceOverlay="@style/CornerTopRounded"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/ivSmallBrightness"
+                app:srcCompat="@drawable/ic_brightness"
+                app:layout_constraintTop_toTopOf="@id/ivFullBrightness"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/ivFullBrightness"
+                android:layout_marginStart="16dp" />
+
+            <com.google.android.material.slider.Slider
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/ivSmallBrightness"
+                app:layout_constraintEnd_toStartOf="@id/ivFullBrightness"
+                app:layout_constraintTop_toTopOf="@id/ivFullBrightness"
+                app:layout_constraintBottom_toBottomOf="@id/ivFullBrightness"
+                android:valueFrom="0.0"
+                android:stepSize="1.0"
+                app:tickVisible="false"
+                android:value="50"
+                android:id="@+id/sliderBrightnessController"
+                android:valueTo="100.0" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:id="@+id/ivFullBrightness"
+                app:srcCompat="@drawable/ic_brightness"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@id/ivSmallBrightness"
+                app:layout_constraintEnd_toEndOf="@id/ivFullBrightness"
+                app:layout_constraintTop_toBottomOf="@id/ivFullBrightness"
+                android:id="@+id/divider1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/backgroundCollection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                tools:listitem="@layout/item_page_background"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
